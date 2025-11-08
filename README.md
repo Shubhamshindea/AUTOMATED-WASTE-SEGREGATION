@@ -9,10 +9,8 @@ A short article on waste control and management systems
 ---
 
 ### 👩‍🔧 Team Members
-- Shubham (3RB22CE070)  
-- Varun (3RB22EC088)  
-- Vijay (3RB22EC091)  
-- Under the Guidance of **Prof. Savitri Kanshette**
+- Shubham (3RB22CE070)
+- varun  (3RB22EB088)
 
 ---
 
