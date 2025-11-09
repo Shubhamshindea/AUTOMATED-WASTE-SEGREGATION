@@ -10,7 +10,7 @@ A short article on waste control and management systems
 
 ### 👩‍🔧 Team Members
 - Shubham (3RB22CE070)
-- varun  (3RB22EB088)
+- varun  (3RB22EC088)
 
 ---
 
