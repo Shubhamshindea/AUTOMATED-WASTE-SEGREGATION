@@ -1,123 +1,101 @@
-# AUTOMATED-WASTE-SEGREGATION
-A short article on waste control and management systems
-# Automated Waste Segregation ♻️
+# AUTOMATED WASTE SEGREGATION ♻️
 
-### Mini Project Report — VTU 5th Semester (2024–2025)
-**Department of Electronics & Communication Engineering**  
-**Bheemanna Khandre Institute of Technology, Bhalki**
+## 📄 Project Overview
+This project presents an **Automated Waste Segregation System** designed to classify waste into **Wet, Dry, and Metallic** categories using sensors and microcontroller-based automation.
+
+The system reduces **manual waste sorting**, supports **recycling**, and improves **environmental hygiene** through a smart, low-cost embedded solution.
 
 ---
 
-### 👩‍🔧 Team Members
-- Shubham (3RB22CE070)
-- varun  (3RB22EC088)
+## 🎓 Academic Details
+- **Mini Project Report** — VTU 5th Semester (2024–2025)
+- **Department:** Electronics & Communication Engineering
+- **Institute:** Bheemanna Khandre Institute of Technology, Bhalki
+
+---
+
+## 👩‍🔧 Team Members
+- **Shubham** (3RB22CE070)
+- **Varun** (3RB22EC088)
 
 ---
 
 ## 📖 Project Abstract
-This project presents a **smart automated waste segregation system** that sorts waste into three categories — **Wet, Dry, and Metallic**. Using sensors such as **IR, Proximity (Metal Detector), and Moisture Sensors**, the system detects the type of waste and directs it into the appropriate bin with the help of **Servo and Stepper motors** controlled by **Arduino Uno**.
+The Automated Waste Segregation system detects and sorts waste using a combination of **IR sensors, Proximity (Metal) sensors, and Moisture sensors**. Based on the sensor data, the system automatically directs waste into the appropriate bin using **Servo and Stepper motors** controlled by an **Arduino UNO**.
 
-The goal is to minimize manual segregation, promote recycling, and improve environmental hygiene through automation.
+This project aims to minimize human intervention in waste segregation and promote efficient recycling practices.
 
 ---
 
 ## ⚙️ Hardware Components
 - Arduino UNO  
 - IR Sensor  
-- Proximity Sensor (Metal detection)  
+- Proximity Sensor (Metal Detection)  
 - Moisture Sensor  
 - Servo Motor  
-- Stepper Motor (ULN2003 Driver)  
-- Buzzer, Jumper Wires, Power Supply, Frame & Collecting Bins  
+- Stepper Motor with ULN2003 Driver  
+- Buzzer  
+- Jumper Wires  
+- Power Supply  
+- Mechanical Frame & Waste Collection Bins  
 
 ---
 
 ## 🔌 Working Principle
-1. Waste is dropped into the input pipe.  
-2. IR sensor detects the presence of waste.  
-3. Proximity sensor identifies metallic waste.  
-4. Moisture sensor differentiates wet and dry waste.  
-5. Arduino controls servo and stepper motors to drop waste into the respective bin.  
-6. A buzzer gives sound indication during operation.
+1. Waste is dropped into the input pipe.
+2. IR sensor detects the presence of waste.
+3. Proximity sensor checks for metallic waste.
+4. Moisture sensor differentiates between wet and dry waste.
+5. Arduino processes sensor data and controls motors.
+6. Servo and stepper motors guide waste into the correct bin.
+7. A buzzer provides audio indication during operation.
 
 ---
 
 ## 💻 Arduino Code
-The complete code is available in the [`CODE/aws_arduino_code.ino`](CODE/aws_arduino_code.ino) file.
+The complete Arduino source code is available at:
 
-```cpp
-#include <CheapStepper.h>
-#include <Servo.h>
 
-Servo servo1;
-#define ir 5
-#define proxi 6
-#define buzzer 12
-int potPin = A0;
-int soil = 0;
-int fsoil;
-CheapStepper stepper(8, 9, 10, 11);
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(proxi, INPUT_PULLUP);
-  pinMode(ir, INPUT);
-  pinMode(buzzer, OUTPUT);
-  servo1.attach(7);
-  stepper.setRpm(17);
-  servo1.write(180);
-  delay(1000);
-  servo1.write(70);
-  delay(1000);
-}
-
-void loop() {
-  fsoil = 0;
-  int L = digitalRead(proxi);
-  if (L == 0) {
-    tone(buzzer, 1000, 1000);
-    stepper.moveDegreesCW(240);
-    delay(1000);
-    servo1.write(180);
-    delay(1000);
-    servo1.write(70);
-    delay(1000);
-    stepper.moveDegreesCCW(240);
-    delay(1000);
-  }
-
-  if (digitalRead(ir) == 0) {
-    tone(buzzer, 1000, 500);
-    delay(1000);
-    int soil = 0;
-    for (int i = 0; i < 3; i++) {
-      soil = analogRead(potPin);
-      soil = constrain(soil, 485, 1023);
-      fsoil = (map(soil, 485, 1023, 100, 0)) + fsoil;
-      delay(75);
-    }
-    fsoil = fsoil / 3;
-
-    if (fsoil > 20) {
-      stepper.moveDegreesCW(120);
-      delay(1000);
-      servo1.write(180);
-      delay(1000);
-      servo1.write(70);
-      delay(1000);
-      stepper.moveDegreesCCW(120);
-      delay(1000);
-    } else {
-      tone(buzzer, 1000, 500);
-      delay(1000);
-      servo1.write(180);
-      delay(1000);
-      servo1.write(70);
-      delay(1000);
-    }
-  }
-}
+### Key Libraries Used
+- `Servo.h`
+- `CheapStepper.h`
 
 ---
 
+## 🧠 Applications
+- Smart waste management systems
+- Municipal waste segregation
+- Recycling plants
+- Smart city initiatives
+- Educational and research projects
 
+---
+
+## 🚀 Advantages
+- Reduces manual labor
+- Improves waste segregation accuracy
+- Low-cost and scalable design
+- Environment-friendly solution
+- Easy to implement using Arduino
+
+---
+
+## 🔮 Future Enhancements
+- IoT-based monitoring and data logging
+- Automatic bin-level detection
+- Mobile app integration
+- AI-based waste classification
+- Conveyor belt system for large-scale usage
+
+---
+
+## 👤 Author & Contributors
+Developed by **Shubham & Varun**  
+Department of Electronics & Communication Engineering  
+BKIT, Bhalki
+
+---
+
+## 📜 License
+This project is developed for **educational purposes**.  
+All rights reserved by the authors.
