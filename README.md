@@ -31,7 +31,7 @@ This project aims to minimize human intervention in waste segregation and promot
 - Arduino UNO  
 - IR Sensor  
 - Proximity Sensor (Metal Detection)  
-- Moisture Sensor  
+- Moisture Sensor /rain sensor 
 - Servo Motor  
 - Stepper Motor with ULN2003 Driver  
 - Buzzer  
@@ -53,7 +53,7 @@ This project aims to minimize human intervention in waste segregation and promot
 ---
 
 ## 💻 Arduino Code
-The complete Arduino source code is available at:
+The complete Arduino source code is available at: code file
 
 
 ### Key Libraries Used
