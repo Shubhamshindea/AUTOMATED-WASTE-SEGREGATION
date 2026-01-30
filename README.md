@@ -8,7 +8,10 @@ The system reduces **manual waste sorting**, supports **recycling**, and improve
 ---
 
 ## 🎓 Academic Details
-- **
+- **Mini Project Report — VTU 5th Semester (2024–2025)
+Department: Electronics & Communication Engineering
+Institute: Bheemanna Khandre Institute of Technology, Bhalki
+
 
 ## 👩‍🔧 Team Members
 - **Shubham** (3RB22CE070)
