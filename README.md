@@ -33,7 +33,7 @@ This project aims to minimize human intervention in waste segregation and promot
 - Moisture Sensor /rain sensor 
 - Servo Motor  
 - Stepper Motor with ULN2003 Driver  
-- Buzzer  
+- Buzzer/ALARM
 - Jumper Wires  
 - Power Supply  
 - Mechanical Frame & Waste Collection Bins  
